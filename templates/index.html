@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="" method="post">
+    {% csrf_token %}
+    <p>url <input type="text" name="uri"></p>
+    <p><button>Enviar</button></p>
+</form>
+
+<table>
+    <thead>
+        <th>ID</th>
+        <th>Directorio</th>
+        <th>Sha256</th>
+    </thead>
+    <tbody>
+    {% for file in all %}
+        <tr>
+            <td>{{ file.id }}</td>
+            <td>{{ file.path }}</td>
+            <td>{{ file.sha256 }}</td>
+        </tr>
+    {% endfor %}
+
+    </tbody>
+
+</table>
+</body>
+</html>

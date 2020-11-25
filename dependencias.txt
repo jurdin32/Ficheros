@@ -1,0 +1,11 @@
+rabbitmq-server
+erlang
+celery
+
+tareas ascincronas
+celery -A Ficheros beat -l INFO --scheduler django_celery_beat.schedulers:DatabaseScheduler
+
+
+planificador:
+celery -A Ficheros worker -l info
+
