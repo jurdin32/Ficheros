@@ -1,6 +1,7 @@
 rabbitmq-server
 erlang
 celery
+python 3.8
 
 tareas ascincronas
 celery -A Ficheros beat -l INFO --scheduler django_celery_beat.schedulers:DatabaseScheduler
