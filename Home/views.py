@@ -15,3 +15,4 @@ def index(request):
         'all':Directory.objects.all(),
     }
     return render(request,'index.html',contexto)
+

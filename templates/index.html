@@ -3,19 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
-<body>
-<form action="" method="post">
+<body style="padding: 100px">
+<form action="" class="form-inline" method="post">
     {% csrf_token %}
-    <p>url <input type="text" name="uri"></p>
-    <p><button>Enviar</button></p>
-</form>
+    <div class="input-group">
+        <div class="input-group-prepend">
+          <div class="input-group-text">Ingrese Path</div>
+        </div>
+        <input type="text" class="form-control"  required="required" id="uri" name="uri" placeholder="/usr/etc/....">
+      </div>
+    <button class="btn btn-primary">Enviar</button>
 
-<table>
+</form>
+<br><br>
+
+<table class="table table-bordered table-striped">
     <thead>
-        <th>ID</th>
-        <th>Directorio</th>
-        <th>Sha256</th>
+    <th>ID</th>
+    <th>Directorio</th>
+    <th>Sha256</th>
     </thead>
     <tbody>
     {% for file in all %}
